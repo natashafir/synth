@@ -1,0 +1,409 @@
+@import "normalize.less";
+@import "vars.less";
+
+body {
+  font-family: "Open Sans";
+  background-color: @background-color;
+  color: @text-color;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 135px;
+  background-color: white;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__logo {
+    width: 50px;
+    height: 23px;
+  }
+  &__navigation {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 25px;
+  }
+  &__item:not(:last-child) {
+    margin-right: 36px;
+  }
+}
+
+.item--checked:after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 34px;
+  left: 134px;
+  margin-top: 36px;
+  background-color: @accent-color;
+}
+
+.arrow-down {
+  margin: 0 14px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  margin-top: -40px;
+  margin-right: -6px;
+}
+
+.user-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 20px;
+  background-color: gray;
+}
+
+.action {
+  height: 64px;
+  width: 64px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 80px;
+  right: 135px;
+  cursor: pointer;
+  background: linear-gradient(135deg, @gradient-light 0%, @gradient-dark 100%);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 72px;
+}
+
+.user-info-wrapper {
+  display: flex;
+}
+
+.user-info {
+  padding-left: 22px;
+}
+
+.user-link {
+  padding: 10px 0 12px;
+}
+
+.edit {
+  color: @accent-color;
+  font-size: 16px;
+  text-decoration: underline;
+
+  &:before {
+    content: "";
+    display: block;
+    background: url("img/edit-icon.svg") no-repeat;
+    width: 20px;
+    height: 20px;
+    float: left;
+    padding-right: 6px;
+  }
+}
+
+.dots {
+  height: 16px;
+  margin-left: 30px;
+  &:hover .dropdown-content {
+    display: flex;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 24px;
+  width: 176px;
+  height: 124px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: @white;
+  opacity: 0.94;
+}
+
+.report:before {
+  content: "";
+  display: block;
+  background: url("img/icon_report.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  float: left;
+  padding-right: 10px;
+}
+
+.block:before {
+  content: "";
+  display: block;
+  background: url("img/icon_delete.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  float: left;
+  padding-right: 10px;
+}
+
+.dropdown-item {
+  padding: 7px 20px;
+
+  &:hover {
+    background-color: @background-color;
+    cursor: pointer;
+  }
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.user-name {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 24px;
+  align-self: flex-start;
+}
+
+.followers {
+  display: flex;
+  margin-bottom: 30px;
+
+  &__item:not(:last-child) {
+    margin-right: 48px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item > h2 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 30px 0 10px;
+  }
+}
+
+.description {
+  width: 350px;
+  line-height: 1.45;
+}
+
+.privacy-switcher {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin: 0 32px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: @switch-color;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.right-wrapper {
+  margin-left: 46px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 24px;
+  margin-top: 60px;
+}
+
+.card {
+  max-width: 326px;
+  min-height: 220px;
+  border-radius: 8px;
+  padding: 60px 24px 0;
+  background-color: #fff;
+  font-weight: 400;
+  letter-spacing: -1px;
+
+  &__text {
+    font-family: "Montserrat";
+    font-size: 2.4em;
+  }
+
+  &__user-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 42px;
+  }
+
+  &__user-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: @user-color;
+  }
+
+  &__share {
+    color: @accent-color;
+    letter-spacing: 0.02em;
+  }
+
+  &__shared-info {
+    padding: 4px 0;
+    margin-bottom: 6px;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+  &__tag {
+    margin-left: 3px;
+    border-radius: 6px;
+    background-color: @background-color;
+  }
+
+  &__actives-info {
+    display: flex;
+    font-size: 12px;
+  }
+
+  &__view {
+    margin-right: 14px;
+  }
+
+  &__view:before {
+    content: "";
+    display: block;
+    background: url("img/icon_view.svg") no-repeat;
+    width: 20px;
+    height: 20px;
+    float: left;
+    padding-right: 6px;
+  }
+
+  &__like:before {
+    content: "";
+    display: block;
+    background: url("img/icon_like.svg") no-repeat;
+    width: 20px;
+    height: 20px;
+    float: left;
+    padding-right: 6px;
+  }
+}
+
+.link:before {
+  content: "";
+  display: block;
+  background: url("img/icon_link.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  float: left;
+  padding-right: 6px;
+}
+
+.card--with-share {
+  padding-top: 28px;
+  padding-bottom: 34px;
+}
+
+.flex {
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-wrapper {
+    margin: 0;
+  }
+
+  .header {
+    padding: 10px 10px;
+    flex-direction: column;
+  }
+
+  .profile-section {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+  }
+
+  .action {
+    top: 50px;
+    right: 10px;
+  }
+
+  .item--checked:after {
+    left: 10px;
+    margin-top: 26px;
+  }
+}
+
