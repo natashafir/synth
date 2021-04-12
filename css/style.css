@@ -307,11 +307,6 @@ template {
 [hidden] {
   display: none;
 }
-body {
-  font-family: "Open Sans";
-  background-color: #ECF1F8;
-  color: #3E4056;
-}
 .header {
   display: flex;
   justify-content: space-between;
@@ -330,6 +325,9 @@ body {
   text-transform: uppercase;
   font-size: 14px;
   margin-top: 25px;
+}
+.header__item {
+  color: #3E4056;
 }
 .header__item:not(:last-child) {
   margin-right: 36px;
@@ -392,7 +390,7 @@ body {
 .edit:before {
   content: "";
   display: block;
-  background: url("img/edit-icon.svg") no-repeat;
+  background: url("../img/edit-icon.svg") no-repeat;
   width: 20px;
   height: 20px;
   float: left;
@@ -420,7 +418,7 @@ body {
 .report:before {
   content: "";
   display: block;
-  background: url("img/icon_report.svg") no-repeat;
+  background: url("../img/icon_report.svg") no-repeat;
   width: 20px;
   height: 20px;
   float: left;
@@ -429,7 +427,7 @@ body {
 .block:before {
   content: "";
   display: block;
-  background: url("img/icon_delete.svg") no-repeat;
+  background: url("../img/icon_delete.svg") no-repeat;
   width: 20px;
   height: 20px;
   float: left;
@@ -593,7 +591,7 @@ input:checked + .slider:before {
 .card__view:before {
   content: "";
   display: block;
-  background: url("img/icon_view.svg") no-repeat;
+  background: url("../img/icon_view.svg") no-repeat;
   width: 20px;
   height: 20px;
   float: left;
@@ -602,7 +600,7 @@ input:checked + .slider:before {
 .card__like:before {
   content: "";
   display: block;
-  background: url("img/icon_like.svg") no-repeat;
+  background: url("../img/icon_like.svg") no-repeat;
   width: 20px;
   height: 20px;
   float: left;
@@ -611,7 +609,7 @@ input:checked + .slider:before {
 .link:before {
   content: "";
   display: block;
-  background: url("img/icon_link.svg") no-repeat;
+  background: url("../img/icon_link.svg") no-repeat;
   width: 20px;
   height: 20px;
   float: left;
@@ -654,4 +652,9 @@ input:checked + .slider:before {
     left: 10px;
     margin-top: 26px;
   }
+}
+body {
+  font-family: "Open Sans";
+  background-color: #ECF1F8;
+  color: #3E4056;
 }
